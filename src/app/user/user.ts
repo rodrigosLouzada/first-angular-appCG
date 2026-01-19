@@ -11,5 +11,8 @@ const radomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 })
 export class User {
   selectedUser = DUMMY_USERS[radomIndex];
-                        
+
+  get imagePath(){
+    return '/users/' + this.selectedUser.avatar;
+  }                     
 }
