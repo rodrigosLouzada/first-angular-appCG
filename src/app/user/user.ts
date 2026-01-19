@@ -16,7 +16,8 @@ export class User {
     return '/users/' + this.selectedUser.avatar;
   }    
   
-  onClick(){
-    console.log("it's working!")
+  onSelectedUser(){
+    const radomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
+    this.selectedUser = DUMMY_USERS[radomIndex];
   }
 }
