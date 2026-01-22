@@ -1,7 +1,5 @@
-import { Component, signal, computed } from '@angular/core';
-import { DUMMY_USERS } from '../dummy-users';
+import { Component, Input } from '@angular/core';
 
-const radomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
 @Component({
   selector: 'app-user',
@@ -10,16 +8,11 @@ const radomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
   styleUrl: './user.css',
 })
 export class User {
-  selectedUser = signal(DUMMY_USERS[radomIndex]);
-  imagePath = computed(() =>  '/users/' + this.selectedUser().avatar);
-
-
-  // get imagePath(){
-  //   return '/users/' + this.selectedUser.get(avatar);
-  // }    
+    @Input() avatar!: string;
+    @Input() name!: string;
+    @Input() id!: string;
   
   onSelectedUser(){
-    const radomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
-    this.selectedUser.set(DUMMY_USERS[radomIndex]);
+    
   }
 }
