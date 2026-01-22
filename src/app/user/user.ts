@@ -12,7 +12,9 @@ export class User {
     @Input() name!: string;
     @Input() id!: string;
   
-  onSelectedUser(){
-    
+  get imagePath(){
+    return '/users/' + this.avatar;
   }
+
+  onSelectedUser(){}
 }
