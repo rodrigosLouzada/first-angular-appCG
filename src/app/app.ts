@@ -14,9 +14,14 @@ import { TasksComponent } from './tasks/tasks';
 export class App {
   users = DUMMY_USERS;
   protected readonly title = signal('first-angular-appCG');
+  selectedUserId = "u1"
 
+
+  get selectedUser(){
+    return this.users.find((user) =>  user.id === this.selectedUserId)!;
+  }
 
   onSelectUser(id: string){
-    console.log("select user's id: " + id);
+    this.selectedUserId = id;
   }
 }
