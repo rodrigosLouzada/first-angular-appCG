@@ -14,7 +14,8 @@ import { TasksComponent } from './tasks/tasks';
 export class App {
   users = DUMMY_USERS;
   protected readonly title = signal('first-angular-appCG');
-  selectedUserId = "u1"
+
+  selectedUserId?: string;
 
 
   get selectedUser(){

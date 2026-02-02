@@ -10,7 +10,11 @@
       />
     </li>
     }
-
   </ul>
-  <app-tasks [name]="selectedUser ? selectedUser.name :  '' "/>
+
+  @if(selectedUser){
+    <app-tasks [name]="selectedUser.name"/>
+  }@else {
+    <p id="fallBack"> "Select some of the users to see their track"</p>
+  }
 </main>
