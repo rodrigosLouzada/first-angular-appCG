@@ -8,18 +8,19 @@ import { Component, computed, EventEmitter, Input, Output, output } from '@angul
   styleUrl: './user.css',
 })
 export class UserComponent {
-  @Input({required: true}) id!: string;
-  @Input({required: true}) avatar!: string;
-  @Input({required: true}) name!: string;
-  
+  @Input({required: true}) user! : {
+    id : string;
+    avatar : string;
+    name : string;
+  };
   
   @Output() select = new EventEmitter();
 
   get imagePath(){
-    return '/users/' + this.avatar;
+    return '/users/' + this.user.avatar;
   }
 
   onSelectedUser(){
-    this.select.emit(this.id);
+    this.select.emit(this.user.id);
   }
 }
