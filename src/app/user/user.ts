@@ -1,6 +1,12 @@
 import { Component, computed, EventEmitter, Input, Output, output } from '@angular/core';
 
 
+interface User{
+  id : string;
+  avatar : string;
+  name : string;
+}
+
 @Component({
   selector: 'app-user',
   imports: [],
@@ -8,11 +14,7 @@ import { Component, computed, EventEmitter, Input, Output, output } from '@angul
   styleUrl: './user.css',
 })
 export class UserComponent {
-  @Input({required: true}) user! : {
-    id : string;
-    avatar : string;
-    name : string;
-  };
+  @Input({required: true}) user!: User;
   
   @Output() select = new EventEmitter();
 
