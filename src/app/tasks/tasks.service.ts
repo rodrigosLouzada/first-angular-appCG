@@ -3,7 +3,7 @@ import { NewTaskData } from "./task/task.model";
 
 @Injectable({providedIn: 'root'})
 export class TasksService{
-     tasks = [
+    tasks = [
   {
     id: 't1',
     userId: 'u1',
@@ -29,8 +29,9 @@ export class TasksService{
   },
 ]
 
+
     getUserTasks(userId: string){
-        this.tasks.filter((task) => task.userId == userId);
+        return this.tasks.filter((task) => task.userId == userId);
     }
 
     addTask(taskData: NewTaskData, userId: string){
